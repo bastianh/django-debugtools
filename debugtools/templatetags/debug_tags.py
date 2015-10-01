@@ -1,7 +1,10 @@
 """
 Debugging features in in the template.
 """
-from django.core import context_processors
+try:
+    from django.template import context_processors
+except ImportError:
+    from django.core import context_processors
 from django.template import Library, Node, Variable, VariableDoesNotExist
 from django.template.defaultfilters import linebreaksbr
 from django.utils import six
